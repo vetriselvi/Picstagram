@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ImageTableViewController.h
 //  Picstagram
 //
 //  Created by Vetri Selvi Vairamuthu on 9/8/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface ImageTableViewController : UITableViewController
+@property(nonatomic,strong) NSMutableArray *imageArray;
 @end
-
