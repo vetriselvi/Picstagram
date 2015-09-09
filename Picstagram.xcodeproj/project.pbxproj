@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D19C08511B9FB46700334F06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C08501B9FB46700334F06 /* main.m */; };
+		D19C08541B9FB46700334F06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C08531B9FB46700334F06 /* AppDelegate.m */; };
+		D19C08571B9FB46700334F06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C08561B9FB46700334F06 /* ViewController.m */; };
+		D19C085C1B9FB46700334F06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19C085B1B9FB46700334F06 /* Images.xcassets */; };
+		D19C085F1B9FB46700334F06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19C085D1B9FB46700334F06 /* LaunchScreen.xib */; };
+		D19C086B1B9FB46700334F06 /* PicstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C086A1B9FB46700334F06 /* PicstagramTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D19C08651B9FB46700334F06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D19C08431B9FB46600334F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D19C084A1B9FB46700334F06;
+			remoteInfo = Picstagram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D19C084B1B9FB46700334F06 /* Picstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19C084F1B9FB46700334F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19C08501B9FB46700334F06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D19C08521B9FB46700334F06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D19C08531B9FB46700334F06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D19C08551B9FB46700334F06 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D19C08561B9FB46700334F06 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D19C085B1B9FB46700334F06 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D19C085E1B9FB46700334F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D19C08641B9FB46700334F06 /* PicstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19C08691B9FB46700334F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19C086A1B9FB46700334F06 /* PicstagramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicstagramTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D19C08481B9FB46700334F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D19C08611B9FB46700334F06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D19C08421B9FB46600334F06 = {
+			isa = PBXGroup;
+			children = (
+				D19C084D1B9FB46700334F06 /* Picstagram */,
+				D19C08671B9FB46700334F06 /* PicstagramTests */,
+				D19C084C1B9FB46700334F06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D19C084C1B9FB46700334F06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D19C084B1B9FB46700334F06 /* Picstagram.app */,
+				D19C08641B9FB46700334F06 /* PicstagramTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D19C084D1B9FB46700334F06 /* Picstagram */ = {
+			isa = PBXGroup;
+			children = (
+				D19C08521B9FB46700334F06 /* AppDelegate.h */,
+				D19C08531B9FB46700334F06 /* AppDelegate.m */,
+				D19C08551B9FB46700334F06 /* ViewController.h */,
+				D19C08561B9FB46700334F06 /* ViewController.m */,
+				D19C085B1B9FB46700334F06 /* Images.xcassets */,
+				D19C085D1B9FB46700334F06 /* LaunchScreen.xib */,
+				D19C084E1B9FB46700334F06 /* Supporting Files */,
+			);
+			path = Picstagram;
+			sourceTree = "<group>";
+		};
+		D19C084E1B9FB46700334F06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D19C084F1B9FB46700334F06 /* Info.plist */,
+				D19C08501B9FB46700334F06 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D19C08671B9FB46700334F06 /* PicstagramTests */ = {
+			isa = PBXGroup;
+			children = (
+				D19C086A1B9FB46700334F06 /* PicstagramTests.m */,
+				D19C08681B9FB46700334F06 /* Supporting Files */,
+			);
+			path = PicstagramTests;
+			sourceTree = "<group>";
+		};
+		D19C08681B9FB46700334F06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D19C08691B9FB46700334F06 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D19C084A1B9FB46700334F06 /* Picstagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D19C086E1B9FB46700334F06 /* Build configuration list for PBXNativeTarget "Picstagram" */;
+			buildPhases = (
+				D19C08471B9FB46700334F06 /* Sources */,
+				D19C08481B9FB46700334F06 /* Frameworks */,
+				D19C08491B9FB46700334F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Picstagram;
+			productName = Picstagram;
+			productReference = D19C084B1B9FB46700334F06 /* Picstagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D19C08631B9FB46700334F06 /* PicstagramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D19C08711B9FB46700334F06 /* Build configuration list for PBXNativeTarget "PicstagramTests" */;
+			buildPhases = (
+				D19C08601B9FB46700334F06 /* Sources */,
+				D19C08611B9FB46700334F06 /* Frameworks */,
+				D19C08621B9FB46700334F06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D19C08661B9FB46700334F06 /* PBXTargetDependency */,
+			);
+			name = PicstagramTests;
+			productName = PicstagramTests;
+			productReference = D19C08641B9FB46700334F06 /* PicstagramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D19C08431B9FB46600334F06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Vetri Selvi Vairamuthu";
+				TargetAttributes = {
+					D19C084A1B9FB46700334F06 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					D19C08631B9FB46700334F06 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = D19C084A1B9FB46700334F06;
+					};
+				};
+			};
+			buildConfigurationList = D19C08461B9FB46600334F06 /* Build configuration list for PBXProject "Picstagram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D19C08421B9FB46600334F06;
+			productRefGroup = D19C084C1B9FB46700334F06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D19C084A1B9FB46700334F06 /* Picstagram */,
+				D19C08631B9FB46700334F06 /* PicstagramTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D19C08491B9FB46700334F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D19C085F1B9FB46700334F06 /* LaunchScreen.xib in Resources */,
+				D19C085C1B9FB46700334F06 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D19C08621B9FB46700334F06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D19C08471B9FB46700334F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D19C08571B9FB46700334F06 /* ViewController.m in Sources */,
+				D19C08541B9FB46700334F06 /* AppDelegate.m in Sources */,
+				D19C08511B9FB46700334F06 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D19C08601B9FB46700334F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D19C086B1B9FB46700334F06 /* PicstagramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D19C08661B9FB46700334F06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D19C084A1B9FB46700334F06 /* Picstagram */;
+			targetProxy = D19C08651B9FB46700334F06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D19C085D1B9FB46700334F06 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D19C085E1B9FB46700334F06 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D19C086C1B9FB46700334F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D19C086D1B9FB46700334F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D19C086F1B9FB46700334F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Picstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D19C08701B9FB46700334F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Picstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D19C08721B9FB46700334F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicstagramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Picstagram.app/Picstagram";
+			};
+			name = Debug;
+		};
+		D19C08731B9FB46700334F06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicstagramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Picstagram.app/Picstagram";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D19C08461B9FB46600334F06 /* Build configuration list for PBXProject "Picstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D19C086C1B9FB46700334F06 /* Debug */,
+				D19C086D1B9FB46700334F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D19C086E1B9FB46700334F06 /* Build configuration list for PBXNativeTarget "Picstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D19C086F1B9FB46700334F06 /* Debug */,
+				D19C08701B9FB46700334F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D19C08711B9FB46700334F06 /* Build configuration list for PBXNativeTarget "PicstagramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D19C08721B9FB46700334F06 /* Debug */,
+				D19C08731B9FB46700334F06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D19C08431B9FB46600334F06 /* Project object */;
+}
