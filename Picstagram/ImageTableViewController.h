@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface ImageTableViewController : UITableViewController
-@property(nonatomic,strong) NSMutableArray *imageArray;
 @end

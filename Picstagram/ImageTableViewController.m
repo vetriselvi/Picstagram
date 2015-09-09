@@ -7,8 +7,14 @@
 //
 
 #import "ImageTableViewController.h"
+#import "DataSource.h"
+#import "Media.h"
+#import "User.h"
+#import "Comment.h"
+
 
 @interface ImageTableViewController ()
+//@property(nonatomic,strong) NSMutableArray *imageArray;
 
 @end
 
@@ -16,14 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    for(int i = 1 ; i <=10 ; i++){
-        NSString *imageName  = [NSString stringWithFormat:@"%d.jpg",i];
-        UIImage *image = [UIImage imageNamed:imageName];
-        if (image) {
-            [self.imageArray  addObject:image];
-        }
+//    for(int i = 1 ; i <=10 ; i++){
+//        NSString *imageName  = [NSString stringWithFormat:@"%d.jpg",i];
+//        UIImage *image = [UIImage imageNamed:imageName];
+//        if (image) {
+//          //  [self.imageArray  addObject:image];
+//        }
+
     
-    }
+    //}
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"imageCell"];
     
 
@@ -31,7 +38,9 @@
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIImage *image = self.imageArray[indexPath.row];
+   // UIImage *image = self.imageArray[indexPath.row];
+    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+    UIImage *image = mediaItem.image;
     return (CGRectGetWidth(self.view.frame)/image.size.width) * image.size.height;
 }
 - (void)didReceiveMemoryWarning {
@@ -43,7 +52,7 @@
 -(id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
     if (self) {
-        self.imageArray = [NSMutableArray array];
+       // self.imageArray = [NSMutableArray array];
     }
     
     return self;
@@ -60,7 +69,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return self.imageArray.count;
+//    return self.imageArray.count;
+    return [DataSource sharedInstance].mediaItems.count;
 }
 
 
@@ -84,8 +94,9 @@
         [cell.contentView addSubview:imageView];
     }
     
-    UIImage *image = self.imageArray[indexPath.row];
-    imageView.image = image;
+   // UIImage *image = self.imageArray[indexPath.row];
+    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+    imageView.image=mediaItem.image;
     return cell;
 }
 
@@ -105,7 +116,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [self.imageArray removeObjectAtIndex:indexPath.row];
+        Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+
+        //[self.imageArray removeObjectAtIndex:indexPath.row];
+        //[[DataSource sharedInstance].mediaItems removeObjectAtIndex:mediaItem];
+       //  [DataSource sharedInstance].mediaItems delete
 
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
