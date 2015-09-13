@@ -13,7 +13,7 @@
 
 @interface DataSource ()
 
-@property(nonatomic,strong) NSArray *mediaItems;
+@property(nonatomic,strong) NSMutableArray *privateMediaItems;
 @end
 
 
@@ -68,7 +68,7 @@
         }
     }
     
-    self.mediaItems = randomMediaItems;
+    self.privateMediaItems = randomMediaItems;
 }
 
 - (User *) randomUser {
@@ -117,4 +117,21 @@
     
     return [NSString stringWithString:s];
 }
+
+- (void)removeMediaItem:(Media *)mediaItem
+{
+    [self.privateMediaItems removeObject:mediaItem];
+}
+
+- (void)addMediaItem:(Media *)mediaItem
+{
+    [self.privateMediaItems addObject:mediaItem];
+}
+
+- (NSArray *)mediaItems
+{
+    return self.privateMediaItems;
+}
+
+
 @end

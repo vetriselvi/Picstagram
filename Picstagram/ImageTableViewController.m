@@ -15,7 +15,7 @@
 
 @interface ImageTableViewController ()
 //@property(nonatomic,strong) NSMutableArray *imageArray;
-
+@property (nonatomic, readonly) NSArray *mediaItems;
 @end
 
 @implementation ImageTableViewController
@@ -39,7 +39,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
    // UIImage *image = self.imageArray[indexPath.row];
-    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+    Media *mediaItem = self.mediaItems[indexPath.row]; //find and replace instead of refactoring
 //    UIImage *image = mediaItem.image;
 //    
     
@@ -67,7 +67,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //  return self.imageArray.count;
     
-    return [DataSource sharedInstance].mediaItems.count;
+    return self.mediaItems.count;
 }
 
 
@@ -94,12 +94,12 @@
 //   // UIImage *image = self.imageArray[indexPath.row];
 //    //imageView.image = image;
 //
-//    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+//    Media *mediaItem = self.mediaItems[indexPath.row];
 //    imageView.image=mediaItem.image;
 //    
     
     MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
-    cell.mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+    cell.mediaItem = self.mediaItems[indexPath.row];
     return cell;
 }
 
@@ -113,24 +113,25 @@
     return YES;
 }
 
-/* doubt - error while deleting
+
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
        
-        Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+        Media *mediaItem = self.mediaItems[indexPath.row];
  /*
        //[self.imageArray removeObjectAtIndex:indexPath.row];
-        [[DataSource sharedInstance].mediaItems removeObjectAtIndex:mediaItem];
-       //  [DataSource sharedInstance].mediaItems delete
+        [self.mediaItems removeObjectAtIndex:mediaItem]; //this is on NSMutableArray... not on mutable array
+       //  self.mediaItems delete
 //         [[self tableView] reloadData];
        */
 
-/* remove this
        
         if (mediaItem) {
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [[DataSource sharedInstance] removeMediaItem:mediaItem];
+            [self.tableView reloadData];
+//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }
         
 
@@ -142,7 +143,12 @@
     }   
 }
 
-*/
+- (NSArray *)mediaItems
+{
+    return [DataSource sharedInstance].mediaItems;
+}
+
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {

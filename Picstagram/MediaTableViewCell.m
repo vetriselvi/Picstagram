@@ -18,6 +18,7 @@
 
 @end
 
+//static variables are generally used in class methods
 static UIFont *lightFont;
 static UIFont *boldFont;
 static UIColor *usernameLabelGray;
@@ -28,7 +29,7 @@ static NSParagraphStyle *paragraphStyle;
 
 @implementation MediaTableViewCell
 
-+ (void)load {
++ (void)load { //for saving constants - called only once per class
     lightFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:11];
     boldFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
     usernameLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]; /*#eeeeee*/
@@ -137,6 +138,12 @@ static NSParagraphStyle *paragraphStyle;
     self.mediaImageView.image = _mediaItem.image;
     self.usernameAndCaptionLabel.attributedText = [self usernameAndCaptionString];
     self.commentLabel.attributedText = [self commentString];
+    if (self.mediaItem.comments[0]) {  // getting first eleement and checking that it exists
+        self.commentLabel.backgroundColor = commentLabelOrange2;
+    }
+    else {  // getting first eleement and checking that it exists
+        self.commentLabel.backgroundColor = commentLabelGray;
+    }
 }
 
 
@@ -158,10 +165,10 @@ static NSParagraphStyle *paragraphStyle;
         
         self.commentLabel = [[UILabel alloc] init];
         self.commentLabel.numberOfLines = 0;
-        //doubt 4
-        Media *item = [Media new];
+
+       // Media *item = [Media new];
         
-        if (item.comments[0]) {
+        if (self.mediaItem.comments[0]) {
             self.commentLabel.backgroundColor = commentLabelOrange2;
         }
         else{
