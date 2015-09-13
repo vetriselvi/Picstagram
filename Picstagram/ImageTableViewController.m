@@ -11,7 +11,7 @@
 #import "Media.h"
 #import "User.h"
 #import "Comment.h"
-
+#import "MediaTableViewCell.h"
 
 @interface ImageTableViewController ()
 //@property(nonatomic,strong) NSMutableArray *imageArray;
@@ -31,26 +31,25 @@
 
     
     //}
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"imageCell"];
+    [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
 
 }
 
-
-- (Media *)items {
-    // UIImage *image = self.imageArray[indexPath.row];
-    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
-    return mediaItem;
-}
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Media *mediaItem;
-    mediaItem = [self items];
-    UIImage *image = mediaItem.image;
+   // UIImage *image = self.imageArray[indexPath.row];
+    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+//    UIImage *image = mediaItem.image;
+//    
     
+//    return 300 + (CGRectGetWidth(self.view.frame)/image.size.width) * image.size.height;
+    return [MediaTableViewCell heightForMediaItem:mediaItem width:CGRectGetWidth(self.view.frame)];
     
-    return (CGRectGetWidth(self.view.frame)/image.size.width) * image.size.height;
+
+    //return [MediaTableViewCell height
 }
+
 
 -(id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
@@ -67,37 +66,40 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //  return self.imageArray.count;
+    
     return [DataSource sharedInstance].mediaItems.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
     
     // Cell configuration
+//    
+//    static NSInteger imageViewTag = 1234;
+//    UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:imageViewTag];
+//    
+//    if(!imageView){
+//        
+//        imageView = [[UIImageView alloc]init];
+//        imageView.contentMode = UIViewContentModeScaleToFill;
+//        imageView.frame = cell.contentView.bounds;
+//        imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//        
+//        imageView.tag = imageViewTag;
+//        
+//        [cell.contentView addSubview:imageView];
+//    }
+//    
+//   // UIImage *image = self.imageArray[indexPath.row];
+//    //imageView.image = image;
+//
+//    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+//    imageView.image=mediaItem.image;
+//    
     
-    static NSInteger imageViewTag = 1234;
-    UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:imageViewTag];
-    
-    if(!imageView){
-        
-        imageView = [[UIImageView alloc]init];
-        imageView.contentMode = UIViewContentModeScaleToFill;
-        imageView.frame = cell.contentView.bounds;
-        imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        
-        imageView.tag = imageViewTag;
-        
-        [cell.contentView addSubview:imageView];
-    }
-    
-   // UIImage *image = self.imageArray[indexPath.row];
-    //imageView.image = image;
-
-    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
-    imageView.image=mediaItem.image;
-    
-    
+    MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
+    cell.mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
     return cell;
 }
 
@@ -116,13 +118,16 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+       
         Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+ /*
        //[self.imageArray removeObjectAtIndex:indexPath.row];
-        //[[DataSource sharedInstance].mediaItems removeObjectAtIndex:mediaItem];
+        [[DataSource sharedInstance].mediaItems removeObjectAtIndex:mediaItem];
        //  [DataSource sharedInstance].mediaItems delete
 //         [[self tableView] reloadData];
-       
+       */
+
+/* remove this
        
         if (mediaItem) {
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

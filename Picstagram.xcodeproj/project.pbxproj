@@ -11,6 +11,7 @@
 		D102D3321BA057D900DF7FCA /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = D102D3311BA057D900DF7FCA /* Media.m */; };
 		D102D3351BA058C200DF7FCA /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = D102D3341BA058C200DF7FCA /* Comment.m */; };
 		D102D33B1BA05D0800DF7FCA /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D102D33A1BA05D0800DF7FCA /* DataSource.m */; };
+		D102D3411BA55F4100DF7FCA /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D102D3401BA55F4100DF7FCA /* MediaTableViewCell.m */; };
 		D19C08511B9FB46700334F06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C08501B9FB46700334F06 /* main.m */; };
 		D19C08541B9FB46700334F06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D19C08531B9FB46700334F06 /* AppDelegate.m */; };
 		D19C085C1B9FB46700334F06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19C085B1B9FB46700334F06 /* Images.xcassets */; };
@@ -48,6 +49,8 @@
 		D102D3341BA058C200DF7FCA /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		D102D3391BA05D0800DF7FCA /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = ../DataSource.h; sourceTree = "<group>"; };
 		D102D33A1BA05D0800DF7FCA /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSource.m; path = ../DataSource.m; sourceTree = "<group>"; };
+		D102D33F1BA55F4100DF7FCA /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
+		D102D3401BA55F4100DF7FCA /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
 		D19C084B1B9FB46700334F06 /* Picstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19C084F1B9FB46700334F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19C08501B9FB46700334F06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				D102D33A1BA05D0800DF7FCA /* DataSource.m */,
 				D19C08891B9FC1CC00334F06 /* ImageTableViewController.h */,
 				D19C088A1B9FC1CC00334F06 /* ImageTableViewController.m */,
+				D102D33F1BA55F4100DF7FCA /* MediaTableViewCell.h */,
+				D102D3401BA55F4100DF7FCA /* MediaTableViewCell.m */,
 				D19C085D1B9FB46700334F06 /* LaunchScreen.xib */,
 				D19C08741B9FC06E00334F06 /* images */,
 				D19C084E1B9FB46700334F06 /* Supporting Files */,
@@ -285,6 +290,7 @@
 			files = (
 				D102D32F1BA0576200DF7FCA /* User.m in Sources */,
 				D102D3351BA058C200DF7FCA /* Comment.m in Sources */,
+				D102D3411BA55F4100DF7FCA /* MediaTableViewCell.m in Sources */,
 				D102D3321BA057D900DF7FCA /* Media.m in Sources */,
 				D19C08541B9FB46700334F06 /* AppDelegate.m in Sources */,
 				D102D33B1BA05D0800DF7FCA /* DataSource.m in Sources */,
