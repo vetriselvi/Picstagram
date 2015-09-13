@@ -41,13 +41,10 @@
    // UIImage *image = self.imageArray[indexPath.row];
     Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
     UIImage *image = mediaItem.image;
+    
+    
     return (CGRectGetWidth(self.view.frame)/image.size.width) * image.size.height;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(id)initWithStyle:(UITableViewStyle)style{
     self = [super initWithStyle:style];
@@ -61,15 +58,9 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-//    return self.imageArray.count;
+//  return self.imageArray.count;
     return [DataSource sharedInstance].mediaItems.count;
 }
 
@@ -77,7 +68,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Cell configuration
     
     static NSInteger imageViewTag = 1234;
     UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:imageViewTag];
@@ -95,8 +86,12 @@
     }
     
    // UIImage *image = self.imageArray[indexPath.row];
+    //imageView.image = image;
+
     Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
     imageView.image=mediaItem.image;
+    
+    
     return cell;
 }
 
@@ -110,28 +105,33 @@
     return YES;
 }
 
-
+/* doubt - error while deleting
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
-
-        //[self.imageArray removeObjectAtIndex:indexPath.row];
+       //[self.imageArray removeObjectAtIndex:indexPath.row];
         //[[DataSource sharedInstance].mediaItems removeObjectAtIndex:mediaItem];
        //  [DataSource sharedInstance].mediaItems delete
+//         [[self tableView] reloadData];
+       
+       
+        if (mediaItem) {
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
+        
 
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-        
         
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        
+        
     }   
 }
 
-
+*/
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
