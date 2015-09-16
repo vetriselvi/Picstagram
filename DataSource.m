@@ -52,7 +52,7 @@
             Media *media = [[Media alloc] init];
             media.user = [self randomUser];
             media.image = image;
-            media.caption = [self randomSentence];
+            media.caption = [self randomSentenceComment];
             
             NSUInteger commentCount = arc4random_uniform(10) + 2;
             NSMutableArray *randomComments = [NSMutableArray array];
@@ -87,11 +87,30 @@
     Comment *comment = [[Comment alloc] init];
     
     comment.from = [self randomUser];
-    comment.text = [self randomSentence];
+    comment.text = [self randomSentence] ;
     
     return comment;
 }
 
+- (NSMutableAttributedString *) randomSentenceComment {
+
+    NSUInteger wordCount = arc4random_uniform(20) + 2;
+    
+    NSMutableString *randomSentence = [[NSMutableString alloc] init];
+    
+    for (int i  = 0; i <= wordCount; i++) {
+        NSString *randomWord = [self randomStringOfLength:arc4random_uniform(12) + 2];
+        [randomSentence appendFormat:@"%@ ", randomWord];
+    }
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:randomSentence];
+    [attributedString addAttribute:NSKernAttributeName
+                             value:@(1)
+                             range:NSMakeRange(0, 9)];
+    
+    return attributedString;
+    
+}
 - (NSString *) randomSentence {
     NSUInteger wordCount = arc4random_uniform(20) + 2;
     
@@ -132,6 +151,8 @@
 {
     return self.privateMediaItems;
 }
+
+#pragma mark - attribute strings caption
 
 
 @end

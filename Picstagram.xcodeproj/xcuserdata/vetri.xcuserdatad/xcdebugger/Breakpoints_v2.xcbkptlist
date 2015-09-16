@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/ImageTableViewController.m"
-            timestampString = "463844386.509058"
+            timestampString = "464089189.886993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -46,27 +46,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/ImageTableViewController.m"
-            timestampString = "463844386.509058"
+            timestampString = "464089189.886993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Picstagram/ImageTableViewController.m"
-            timestampString = "463844386.509058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -94,28 +78,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/ImageTableViewController.m"
-            timestampString = "463844386.509058"
+            timestampString = "464089189.886993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Picstagram/ImageTableViewController.m"
-            timestampString = "463844386.509058"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -126,11 +94,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/ImageTableViewController.m"
-            timestampString = "463844386.509058"
+            timestampString = "464089189.886993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -142,7 +110,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/MediaTableViewCell.m"
-            timestampString = "463855992.086478"
+            timestampString = "464086463.45628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
@@ -158,7 +126,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/MediaTableViewCell.m"
-            timestampString = "463855992.086478"
+            timestampString = "464086463.45628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -174,7 +142,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/MediaTableViewCell.m"
-            timestampString = "463855992.086478"
+            timestampString = "464086463.45628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
@@ -190,7 +158,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/MediaTableViewCell.m"
-            timestampString = "463855992.086478"
+            timestampString = "464086463.45628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -206,7 +174,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/MediaTableViewCell.m"
-            timestampString = "463855992.086478"
+            timestampString = "464086463.45628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -234,7 +202,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Picstagram/ImageTableViewController.m"

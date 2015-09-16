@@ -15,7 +15,7 @@
 
 @interface ImageTableViewController ()
 //@property(nonatomic,strong) NSMutableArray *imageArray;
-@property (nonatomic, readonly) NSArray *mediaItems;
+@property (nonatomic, readonly)  NSArray *mediaItems; // NSMutableArray *mediaItems;
 @end
 
 @implementation ImageTableViewController
@@ -41,13 +41,9 @@
    // UIImage *image = self.imageArray[indexPath.row];
     Media *mediaItem = self.mediaItems[indexPath.row]; //find and replace instead of refactoring
 //    UIImage *image = mediaItem.image;
-//    
-    
 //    return 300 + (CGRectGetWidth(self.view.frame)/image.size.width) * image.size.height;
     return [MediaTableViewCell heightForMediaItem:mediaItem width:CGRectGetWidth(self.view.frame)];
-    
 
-    //return [MediaTableViewCell height
 }
 
 
@@ -100,48 +96,49 @@
     
     MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     cell.mediaItem = self.mediaItems[indexPath.row];
+#ifdef DEBUG
+    NSLog(@"Cell recursive description:\n\n%@\n\n", [cell performSelector:@selector(recursiveDescription)]);
+#endif
     return cell;
 }
 
-
-
 // Override to support conditional editing of the table view.
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     // Return NO if you do not want the specified item to be editable.
-    
-    
     return YES;
 }
-
-
-
 // Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-       
         Media *mediaItem = self.mediaItems[indexPath.row];
- /*
-       //[self.imageArray removeObjectAtIndex:indexPath.row];
-        [self.mediaItems removeObjectAtIndex:mediaItem]; //this is on NSMutableArray... not on mutable array
-       //  self.mediaItems delete
-//         [[self tableView] reloadData];
-       */
-
-       
+        
         if (mediaItem) {
-            [[DataSource sharedInstance] removeMediaItem:mediaItem];
-            [self.tableView reloadData];
-//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        }
-        
+            
+           [[DataSource sharedInstance] removeMediaItem:mediaItem];
+            //[self.mediaItems removeObjectAtIndex:indexPath.row];
 
+            //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView reloadData];
+            
+        }
+#ifdef DEBUG
+        NSLog(@"Cell recursive description:\n\n%@\n\n", [[tableView cellForRowAtIndexPath:indexPath] performSelector:@selector(recursiveDescription)]);
+#endif
         
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        
-        
-    }   
+    }
+    else {
+        NSLog(@"Unhandled editing style! %ld", (long)editingStyle);
+    }
+
+    
+    
 }
+
+#pragma mark - refracted methods
 
 - (NSArray *)mediaItems
 {
@@ -149,28 +146,5 @@
 }
 
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

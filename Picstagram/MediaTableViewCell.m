@@ -181,4 +181,7 @@ static NSParagraphStyle *paragraphStyle;
     return self;
 }
 
+# pragma mark - swipe left to delete
+
+
 @end
