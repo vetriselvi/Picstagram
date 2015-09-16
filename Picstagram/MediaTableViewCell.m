@@ -19,6 +19,11 @@
 @property (nonatomic, strong) NSLayoutConstraint *usernameAndCaptionLabelHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 
+
+@property (nonatomic, strong) NSLayoutConstraint *imageWidhtConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *usernameAndCaptionLabelWidthConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *commentLabelWidthConstraint;
+
 @end
 
 //static variables are generally used in class methods
@@ -140,11 +145,14 @@ static NSParagraphStyle *paragraphStyle;
     CGSize maxSize = CGSizeMake(CGRectGetWidth(self.bounds), CGFLOAT_MAX);
     CGSize usernameLabelSize = [self.usernameAndCaptionLabel sizeThatFits:maxSize];
     CGSize commentLabelSize = [self.commentLabel sizeThatFits:maxSize];
+    CGSize imageViewSize = [self.imageView sizeThatFits:maxSize];
     
     self.usernameAndCaptionLabelHeightConstraint.constant = usernameLabelSize.height + 20;
     self.commentLabelHeightConstraint.constant = commentLabelSize.height + 20;
-    self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
-  
+//    self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+    
+    
+    self.imageWidhtConstraint.constant = self.mediaItem.image.size.width/self.mediaItem.image.size.height * CGRectGetHeight(self.contentView.bounds);
     
     // Hide the line between cells
     self.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth(self.bounds)/2.0, 0, CGRectGetWidth(self.bounds)/2.0);
@@ -157,12 +165,14 @@ static NSParagraphStyle *paragraphStyle;
     self.mediaImageView.image = _mediaItem.image;
     self.usernameAndCaptionLabel.attributedText = [self usernameAndCaptionString];
     self.commentLabel.attributedText = [self commentString];
-    if ([self.commentItem.idNumber  isEqual: @"1"]) {  // getting first eleement and checking that it exists
-        self.commentLabel.backgroundColor = commentLabelOrange2;
-    }
-    else {  // getting first eleement and checking that it exists
-        self.commentLabel.backgroundColor = commentLabelGray;
-    }
+//    if ([self.commentItem.idNumber  isEqual: @"1"]) {  // getting first eleement and checking that it exists
+//        self.commentLabel.backgroundColor = commentLabelOrange2;
+//    }
+//    else {  // getting first eleement and checking that it exists
+//        self.commentLabel.backgroundColor = commentLabelGray;
+//    }
+    
+    self.commentLabel.backgroundColor = commentLabelGray;
 }
 
 
@@ -216,7 +226,17 @@ static NSParagraphStyle *paragraphStyle;
                                                                   attribute:NSLayoutAttributeNotAnAttribute
                                                                  multiplier:1
                                                                    constant:100];
+        
+        
         self.imageHeightConstraint.identifier = @"Image height constraint";
+        
+//        self.imageWidhtConstraint = [NSLayoutConstraint constraintWithItem:_mediaImageView
+//                                                                 attribute:NSLayoutAttributeWidth
+//                                                                 relatedBy:NSLayoutRelationEqual
+//                                                                    toItem:nil attribute:NSLayoutRelationEqual
+//                                                                multiplier:1
+//                                                                  constant:100];
+        
         
         self.usernameAndCaptionLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_usernameAndCaptionLabel
                                                                                     attribute:NSLayoutAttributeHeight
@@ -236,7 +256,13 @@ static NSParagraphStyle *paragraphStyle;
                                                                           constant:100];
         self.commentLabelHeightConstraint.identifier = @"Comment label height constraint";
         
-        [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
+        
+       
+        
+        
+        
+        
+        [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]]; //
 
     }
     return self;
