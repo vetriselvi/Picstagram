@@ -19,6 +19,9 @@
 @property (nonatomic, strong) NSLayoutConstraint *usernameAndCaptionLabelHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 
+@property (nonatomic, strong) NSLayoutConstraint *imageWeightConstraint;
+
+
 @end
 
 //static variables are generally used in class methods
@@ -212,11 +215,23 @@ static NSParagraphStyle *paragraphStyle;
         self.imageHeightConstraint = [NSLayoutConstraint constraintWithItem:_mediaImageView
                                                                   attribute:NSLayoutAttributeHeight
                                                                   relatedBy:NSLayoutRelationEqual
-                                                                     toItem:nil
-                                                                  attribute:NSLayoutAttributeNotAnAttribute
+                                                                     toItem:_mediaImageView
+                                                                  attribute:NSLayoutAttributeWidth
                                                                  multiplier:1
                                                                    constant:100];
         self.imageHeightConstraint.identifier = @"Image height constraint";
+        
+        
+        self.imageWeightConstraint = [NSLayoutConstraint constraintWithItem:_mediaImageView
+                                                                  attribute:NSLayoutAttributeWidth
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:_mediaImageView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                 multiplier:1
+                                                                   constant:0
+                                      
+                                      ];
+        self.imageWeightConstraint.identifier = @"Image weigt constraint";
         
         self.usernameAndCaptionLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_usernameAndCaptionLabel
                                                                                     attribute:NSLayoutAttributeHeight
@@ -236,7 +251,7 @@ static NSParagraphStyle *paragraphStyle;
                                                                           constant:100];
         self.commentLabelHeightConstraint.identifier = @"Comment label height constraint";
         
-        [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
+        [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint, self.imageWeightConstraint]];
 
     }
     return self;
