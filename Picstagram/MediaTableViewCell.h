@@ -15,5 +15,6 @@
 @interface MediaTableViewCell : UITableViewCell
 + (CGFloat) heightForMediaItem:(Media *)mediaItem width:(CGFloat)width;
 @property(nonatomic,strong)Media *mediaItem;
+@property (nonatomic,strong) Media *commentItem;
 
 @end

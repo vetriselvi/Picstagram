@@ -138,7 +138,7 @@ static NSParagraphStyle *paragraphStyle;
     self.mediaImageView.image = _mediaItem.image;
     self.usernameAndCaptionLabel.attributedText = [self usernameAndCaptionString];
     self.commentLabel.attributedText = [self commentString];
-    if (self.mediaItem.comments[0]) {  // getting first eleement and checking that it exists
+    if ([self.commentItem.idNumber  isEqual: @"1"]) {  // getting first eleement and checking that it exists
         self.commentLabel.backgroundColor = commentLabelOrange2;
     }
     else {  // getting first eleement and checking that it exists
