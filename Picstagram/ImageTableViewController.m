@@ -37,15 +37,18 @@
 }
 
 
-- (Media *)items {
-    // UIImage *image = self.imageArray[indexPath.row];
-    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
-    return mediaItem;
-}
+//- (Media *)items {
+//    // UIImage *image = self.imageArray[indexPath.row];
+//    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+//    return mediaItem;
+//}
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Media *mediaItem;
-    mediaItem = [self items];
+   // Media *mediaItem;
+    // UIImage *image = self.imageArray[indexPath.row];
+    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
+
+    //mediaItem = [self items];
     UIImage *image = mediaItem.image;
     
     
