@@ -12,7 +12,7 @@
 #import "Comment.h"
 
 @interface DataSource ()
-
+@property (nonatomic, strong) Comment *commentString;
 @property(nonatomic,strong) NSMutableArray *privateMediaItems;
 @end
 
@@ -118,6 +118,8 @@
     
     for (int i  = 0; i <= wordCount; i++) {
         NSString *randomWord = [self randomStringOfLength:arc4random_uniform(12) + 2];
+        
+
         [randomSentence appendFormat:@"%@ ", randomWord];
     }
     
