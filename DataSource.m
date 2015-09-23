@@ -11,19 +11,25 @@
 #import "Media.h"
 #import "Comment.h"
 
-@interface DataSource ()
+@interface DataSource () {
+    NSMutableArray *_mediaItems;
+}
+
 @property (nonatomic, strong) Comment *commentString;
 @property(nonatomic,strong) NSMutableArray *privateMediaItems;
+
 @end
 
 
 @implementation DataSource
-+(instancetype) sharedInstance{
+
+//singleton's are used to ensure that the instance is initialized once and data integrity is maintained
++ (instancetype) sharedInstance {
     
     static dispatch_once_t once;
     static id sharedInstance;
     dispatch_once(&once, ^{
-        sharedInstance = [[self alloc]init];
+        sharedInstance = [[self alloc] init];
     });
     
     return sharedInstance;
@@ -149,12 +155,48 @@
     [self.privateMediaItems addObject:mediaItem];
 }
 
+//- (NSArray *)mediaItems
+//{
+//    return self.privateMediaItems;
+//}
+
+
 - (NSArray *)mediaItems
 {
-    return self.privateMediaItems;
+    return _mediaItems;
 }
 
-#pragma mark - attribute strings caption
+- (void)setMediaItems:(NSArray *)mediaItems
+{
+    _mediaItems = mediaItems;
+}
 
+#pragma mark - Key/Value Observing
+
+- (NSUInteger) countOfMediaItems {
+    return self.mediaItems.count;
+}
+
+- (id) objectInMediaItemsAtIndex:(NSUInteger)index {
+    return [self.mediaItems objectAtIndex:index];
+}
+
+- (NSArray *) mediaItemsAtIndexes:(NSIndexSet *)indexes {
+    return [self.mediaItems objectsAtIndexes:indexes];
+}
+
+#pragma mark - insert, remove and replace at index
+
+- (void) insertObject:(Media *)object inMediaItemsAtIndex:(NSUInteger)index {
+    [_mediaItems insertObject:object atIndex:index];
+}
+
+- (void) removeObjectFromMediaItemsAtIndex:(NSUInteger)index {
+    [_mediaItems removeObjectAtIndex:index];
+}
+
+- (void) replaceObjectInMediaItemsAtIndex:(NSUInteger)index withObject:(id)object {
+    [_mediaItems replaceObjectAtIndex:index withObject:object];
+}
 
 @end

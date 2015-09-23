@@ -228,9 +228,7 @@ static NSParagraphStyle *paragraphStyle;
                                                                      toItem:_mediaImageView
                                                                   attribute:NSLayoutAttributeHeight
                                                                  multiplier:1
-                                                                   constant:0
-                                      
-                                      ];
+                                                                   constant:0 ];
         self.imageWeightConstraint.identifier = @"Image weigt constraint";
         
         self.usernameAndCaptionLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_usernameAndCaptionLabel
