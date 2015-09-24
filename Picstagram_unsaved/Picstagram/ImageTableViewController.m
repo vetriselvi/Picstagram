@@ -14,7 +14,7 @@
 #import "MediaTableViewCell.h"
 
 @interface ImageTableViewController ()
-//@property(nonatomic,strong) NSMutableArray *imageArray;
+@property(nonatomic,strong) NSMutableArray *imageArray;
 @property (nonatomic, readonly)  NSArray *mediaItems; // NSMutableArray *mediaItems;
 @end
 
@@ -42,9 +42,6 @@
     Media *mediaItem = self.mediaItems[indexPath.row]; //find and replace instead of refactoring
 //    UIImage *image = mediaItem.image;
 //    return 300 + (CGRectGetWidth(self.view.frame)/image.size.width) * image.size.height;
-    
-    
-    
     return [MediaTableViewCell heightForMediaItem:mediaItem width:CGRectGetWidth(self.view.frame)];
 
 }
@@ -99,9 +96,9 @@
     
     MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     cell.mediaItem = self.mediaItems[indexPath.row];
-//#ifdef DEBUG
-//    NSLog(@"Cell recursive description:\n\n%@\n\n", [cell performSelector:@selector(recursiveDescription)]);
-//#endif
+#ifdef DEBUG
+    NSLog(@"Cell recursive description:\n\n%@\n\n", [cell performSelector:@selector(recursiveDescription)]);
+#endif
     return cell;
 }
 
@@ -128,9 +125,9 @@
             [self.tableView reloadData];
             
         }
-//#ifdef DEBUG
-//        NSLog(@"Cell recursive description:\n\n%@\n\n", [[tableView cellForRowAtIndexPath:indexPath] performSelector:@selector(recursiveDescription)]);
-//#endif
+#ifdef DEBUG
+        NSLog(@"Cell recursive description:\n\n%@\n\n", [[tableView cellForRowAtIndexPath:indexPath] performSelector:@selector(recursiveDescription)]);
+#endif
         
     }
     else {
@@ -141,13 +138,23 @@
     
 }
 
-#pragma mark - refracted methods
-
 - (NSArray *)mediaItems
 {
     return [DataSource sharedInstance].mediaItems;
 }
 
+#pragma mark - Handler for Key-Value Notification
 
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (object == [DataSource sharedInstance] && [keyPath isEqualToString:@"mediaItems"]) {
+        // Nothing… YET
+    }
+}
+
+#pragma mark - dealloc
+- (void) dealloc
+{
+    [[DataSource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
+}
 
 @end
