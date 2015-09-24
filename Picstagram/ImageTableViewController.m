@@ -14,7 +14,7 @@
 #import "MediaTableViewCell.h"
 
 @interface ImageTableViewController ()
-@property(nonatomic,strong) NSMutableArray *imageArray;
+//@property(nonatomic,strong) NSMutableArray *imageArray;
 @property (nonatomic, readonly)  NSArray *mediaItems; // NSMutableArray *mediaItems;
 @end
 
@@ -138,23 +138,13 @@
     
 }
 
+#pragma mark - refracted methods
+
 - (NSArray *)mediaItems
 {
     return [DataSource sharedInstance].mediaItems;
 }
 
-#pragma mark - Handler for Key-Value Notification
 
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (object == [DataSource sharedInstance] && [keyPath isEqualToString:@"mediaItems"]) {
-        // Nothing… YET
-    }
-}
-
-#pragma mark - dealloc
-- (void) dealloc
-{
-    [[DataSource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
-}
 
 @end
