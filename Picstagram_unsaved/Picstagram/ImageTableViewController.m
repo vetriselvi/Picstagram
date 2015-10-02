@@ -22,15 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    for(int i = 1 ; i <=10 ; i++){
-//        NSString *imageName  = [NSString stringWithFormat:@"%d.jpg",i];
-//        UIImage *image = [UIImage imageNamed:imageName];
-//        if (image) {
-//          //  [self.imageArray  addObject:image];
-//        }
-
-    
-    //}
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
 
@@ -38,10 +29,8 @@
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // UIImage *image = self.imageArray[indexPath.row];
     Media *mediaItem = self.mediaItems[indexPath.row]; //find and replace instead of refactoring
-//    UIImage *image = mediaItem.image;
-//    return 300 + (CGRectGetWidth(self.view.frame)/image.size.width) * image.size.height;
+
     return [MediaTableViewCell heightForMediaItem:mediaItem width:CGRectGetWidth(self.view.frame)];
 
 }
@@ -68,37 +57,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
-    
-    // Cell configuration
-//    
-//    static NSInteger imageViewTag = 1234;
-//    UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:imageViewTag];
-//    
-//    if(!imageView){
-//        
-//        imageView = [[UIImageView alloc]init];
-//        imageView.contentMode = UIViewContentModeScaleToFill;
-//        imageView.frame = cell.contentView.bounds;
-//        imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//        
-//        imageView.tag = imageViewTag;
-//        
-//        [cell.contentView addSubview:imageView];
-//    }
-//    
-//   // UIImage *image = self.imageArray[indexPath.row];
-//    //imageView.image = image;
-//
-//    Media *mediaItem = self.mediaItems[indexPath.row];
-//    imageView.image=mediaItem.image;
-//    
+  
     
     MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     cell.mediaItem = self.mediaItems[indexPath.row];
-#ifdef DEBUG
-    NSLog(@"Cell recursive description:\n\n%@\n\n", [cell performSelector:@selector(recursiveDescription)]);
-#endif
+
     return cell;
 }
 
@@ -109,34 +72,18 @@
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-// Override to support editing the table view.
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Media *mediaItem = self.mediaItems[indexPath.row];
-        
-        if (mediaItem) {
-            
-           [[DataSource sharedInstance] removeMediaItem:mediaItem];
-            //[self.mediaItems removeObjectAtIndex:indexPath.row];
-
-            //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView reloadData];
-            
-        }
-#ifdef DEBUG
-        NSLog(@"Cell recursive description:\n\n%@\n\n", [[tableView cellForRowAtIndexPath:indexPath] performSelector:@selector(recursiveDescription)]);
-#endif
-        
+        // Delete the row from the data source
+        Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+        [[DataSource sharedInstance] deleteMediaItem:item];
     }
-    else {
-        NSLog(@"Unhandled editing style! %ld", (long)editingStyle);
-    }
-
-    
-    
 }
+
 
 - (NSArray *)mediaItems
 {

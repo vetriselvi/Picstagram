@@ -145,20 +145,7 @@
     return [NSString stringWithString:s];
 }
 
-- (void)removeMediaItem:(Media *)mediaItem
-{
-    [self.privateMediaItems removeObject:mediaItem];
-}
 
-- (void)addMediaItem:(Media *)mediaItem
-{
-    [self.privateMediaItems addObject:mediaItem];
-}
-
-//- (NSArray *)mediaItems
-//{
-//    return self.privateMediaItems;
-//}
 
 
 - (NSArray *)mediaItems
@@ -197,6 +184,11 @@
 
 - (void) replaceObjectInMediaItemsAtIndex:(NSUInteger)index withObject:(id)object {
     [_mediaItems replaceObjectAtIndex:index withObject:object];
+}
+
+- (void) deleteMediaItem:(Media *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    [mutableArrayWithKVO removeObject:item];
 }
 
 @end

@@ -56,29 +56,7 @@ static NSParagraphStyle *paragraphStyle;
     paragraphStyle = mutableParagraphStyle;
 }
 + (CGFloat) heightForMediaItem:(Media *)mediaItem width:(CGFloat)width {
-//    // Make a cell
-//    MediaTableViewCell *layoutCell = [[MediaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"layoutCell"];
-//    
-//    // Set it to the given width, and the maximum possible height
-//   // layoutCell.frame = CGRectMake(0, 0, width, CGFLOAT_MAX);
-//     layoutCell.frame = CGRectMake(0, 0, width, CGRectGetHeight(layoutCell.frame));
-//    layoutCell.mediaItem = mediaItem;
-//    
-//   
-//
-//    // Give it the media item
-//    
-//    
-//    // Make it adjust the image view and labels
-//    [layoutCell layoutSubviews];
-//    
-//    [layoutCell setNeedsLayout];
-//    [layoutCell layoutIfNeeded];
-//    
-//    // The height will be wherever the bottom of the comments label is
-//    return CGRectGetMaxY(layoutCell.commentLabel.frame);
-    
-    // Make a cell
+   // Make a cell
     MediaTableViewCell *layoutCell = [[MediaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"layoutCell"];
     
     // Give it a media item
@@ -133,31 +111,10 @@ static NSParagraphStyle *paragraphStyle;
     return commentString;
 }
 
-//size of attributed strings
 
-//- (CGSize) sizeOfString:(NSAttributedString *)string {
-//    CGSize maxSize = CGSizeMake(CGRectGetWidth(self.contentView.bounds) - 40, 0.0);
-//    CGRect sizeRect = [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil];
-//    sizeRect.size.height += 20;
-//    sizeRect = CGRectIntegral(sizeRect);
-//    return sizeRect.size;
-//}
 
 - (void) layoutSubviews {
     [super layoutSubviews];
-    
-//    CGFloat imageHeight = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
-//    self.mediaImageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.bounds), imageHeight);
-//    
-//    CGSize sizeOfUsernameAndCaptionLabel = [self sizeOfString:self.usernameAndCaptionLabel.attributedText];
-//    self.usernameAndCaptionLabel.frame = CGRectMake(0, CGRectGetMaxY(self.mediaImageView.frame), CGRectGetWidth(self.contentView.bounds), sizeOfUsernameAndCaptionLabel.height);
-//    
-//    CGSize sizeOfCommentLabel = [self sizeOfString:self.commentLabel.attributedText];
-//    self.commentLabel.frame = CGRectMake(0, CGRectGetMaxY(self.usernameAndCaptionLabel.frame), CGRectGetWidth(self.bounds), sizeOfCommentLabel.height);
-    
-    
-    
-    
     
     CGSize maxSize = CGSizeMake(CGRectGetWidth(self.bounds), CGFLOAT_MAX);
     CGSize usernameLabelSize = [self.usernameAndCaptionLabel sizeThatFits:maxSize];
@@ -178,20 +135,7 @@ static NSParagraphStyle *paragraphStyle;
 //setters overriden
 
 - (void) setMediaItem:(Media *)mediaItem {
-//    _mediaItem = mediaItem;
-//    self.mediaImageView.image = _mediaItem.image;
-//    self.usernameAndCaptionLabel.attributedText = [self usernameAndCaptionString];
-//    self.commentLabel.attributedText = [self commentString];
-//    if ([self.commentItem.idNumber  isEqual: @"1"]) {  // getting first eleement and checking that it exists
-//        self.commentLabel.backgroundColor = commentLabelOrange2;
-//    }
-//    else {  // getting first eleement and checking that it exists
-//        self.commentLabel.backgroundColor = commentLabelGray;
-//    }
-//    
-//    self.commentLabel.backgroundColor = commentLabelGray;
-//    
-    
+
     
     _mediaItem = mediaItem;
     

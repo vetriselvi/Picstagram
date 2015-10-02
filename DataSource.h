@@ -18,6 +18,7 @@
 - (void)removeMediaItem:(Media *)mediaItem; //add specific methods for adding/removing
 
 - (void)addMediaItem:(Media *)mediaItem;
+- (void) deleteMediaItem:(Media *)item;
 
 
 @end
