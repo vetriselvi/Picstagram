@@ -14,6 +14,7 @@
 @interface DataSource ()
 @property (nonatomic, strong) Comment *commentString;
 @property(nonatomic,strong) NSMutableArray *privateMediaItems;
+@property (nonatomic, assign) BOOL isRefreshing;
 @end
 
 
@@ -153,6 +154,30 @@
 {
     return self.privateMediaItems;
 }
+
+- (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler {
+    // #1
+    if (self.isRefreshing == NO) {
+        self.isRefreshing = YES;
+        // #2
+        Media *media = [[Media alloc] init];
+        media.user = [self randomUser];
+        media.image = [UIImage imageNamed:@"10.jpg"];
+        media.caption = [self randomSentence];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+        [mutableArrayWithKVO insertObject:media atIndex:0];
+        
+        self.isRefreshing = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
+    }
+}
+
+
+
 
 #pragma mark - attribute strings caption
 

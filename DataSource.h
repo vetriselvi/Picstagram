@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class Media;
+typedef void (^NewItemCompletionBlock)(NSError *error);
 
 @interface DataSource : NSObject
 +(instancetype) sharedInstance;
@@ -18,6 +19,8 @@
 - (void)removeMediaItem:(Media *)mediaItem; //add specific methods for adding/removing
 
 - (void)addMediaItem:(Media *)mediaItem;
+
+- (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
 
 
 @end
