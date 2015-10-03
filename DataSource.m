@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, strong) Comment *commentString;
-@property(nonatomic,strong) NSMutableArray *privateMediaItems;
+@property(nonatomic,strong) NSMutableArray *mediaItems;
 
 @end
 
@@ -74,7 +74,7 @@
         }
     }
     
-    self.privateMediaItems = randomMediaItems;
+    self.mediaItems = randomMediaItems;
 }
 
 - (User *) randomUser {
@@ -146,15 +146,15 @@
 }
 
 
-- (void)addMediaItem:(Media *)mediaItem
-{
-    [self.privateMediaItems addObject:mediaItem];
-}
+//- (void)addMediaItem:(Media *)mediaItem
+//{
+//    [self.privateMediaItems addObject:mediaItem];
+//}
 
-- (NSArray *)mediaItems
-{
-    return self.privateMediaItems;
-}
+//- (NSArray *)mediaItems
+//{
+//    return self.privateMediaItems;
+//}
 
 
 //- (NSArray *)mediaItems
@@ -162,15 +162,16 @@
 //    return _mediaItems;
 //}
 
-- (void)setMediaItems:(NSArray *)mediaItems
-{
-    _mediaItems = mediaItems;
-}
+//- (void)setMediaItems:(NSArray *)mediaItems
+//{
+//    _mediaItems = mediaItems;
+//}
 
 
 - (void) deleteMediaItem:(Media *)item {
     NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
     [mutableArrayWithKVO removeObject:item];
+    
 }
 
 #pragma mark - Key/Value Observing

@@ -55,8 +55,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"number of tasks when tableview:%d", self.mediaItems.count);
 
-    return[DataSource sharedInstance].mediaItems.count;
-    //return self.mediaItems.count;
+    //return[DataSource sharedInstance].mediaItems.count;
+    return self.mediaItems.count;
 }
 
 
@@ -81,22 +81,23 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  //  [[DataSource sharedInstance].mediaItems removeObjectAtIndex:indexPath.row];
+
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [self.tableView beginUpdates];
+      //  [self.tableView beginUpdates];
         
         Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
-        [self.imageArray removeObjectAtIndex:indexPath.row];
 
         [[DataSource sharedInstance] deleteMediaItem:item];
-        [self.tableView reloadData];
-        [self.tableView endUpdates];
+
+        //        [self.tableView reloadData];
+      //  [self.tableView endUpdates];
     }
+   // [self.tableView reloadData];
+
 }
-//- (NSArray *)mediaItems
-//{
-//    return [DataSource sharedInstance].mediaItems;
-//}
+
 
 #pragma mark - Handler for Key-Value Notification
 
