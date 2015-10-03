@@ -145,10 +145,10 @@
     return [NSString stringWithString:s];
 }
 
-- (void)removeMediaItem:(Media *)mediaItem
-{
-    [self.privateMediaItems removeObject:mediaItem];
-}
+//- (void)removeMediaItem:(Media *)mediaItem
+//{
+//    [self.privateMediaItems removeObject:mediaItem];
+//}
 
 - (void)addMediaItem:(Media *)mediaItem
 {
@@ -169,6 +169,12 @@
 - (void)setMediaItems:(NSArray *)mediaItems
 {
     _mediaItems = mediaItems;
+}
+
+
+- (void) deleteMediaItem:(Media *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    [mutableArrayWithKVO removeObject:item];
 }
 
 #pragma mark - Key/Value Observing
