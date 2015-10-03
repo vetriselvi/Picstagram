@@ -225,7 +225,7 @@ static NSParagraphStyle *paragraphStyle;
                                                                      toItem:_mediaImageView
                                                                   attribute:NSLayoutAttributeWidth
                                                                  multiplier:1
-                                                                   constant:100];
+                                                                   constant:0];
         self.imageHeightConstraint.identifier = @"Image height constraint";
         
         
@@ -256,13 +256,13 @@ static NSParagraphStyle *paragraphStyle;
                                                                           constant:100];
         self.commentLabelHeightConstraint.identifier = @"Comment label height constraint";
         
-        [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint, self.imageWeightConstraint]];
+        [self.contentView addConstraints:@[self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint, self.imageWeightConstraint]];
 
     }
     return self;
 }
 
-# pragma mark - swipe left to delete
+
 
 
 @end

@@ -116,7 +116,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+        
         [[DataSource sharedInstance] deleteMediaItem:item];
+         //[self.imageArray removeObjectAtIndex:indexPath.row];
+//        [self.tableView reloadData];
     }
 }
 
@@ -165,8 +168,10 @@
         }
         
         // Tell the table view that we're done telling it about changes, and to complete the animation
+        self.tableView.translatesAutoresizingMaskIntoConstraints=NO;
+
         [self.tableView endUpdates];
-    }
+            }
 }
 }
 

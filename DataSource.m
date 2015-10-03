@@ -145,26 +145,22 @@
     return [NSString stringWithString:s];
 }
 
-//- (void)removeMediaItem:(Media *)mediaItem
-//{
-//    [self.privateMediaItems removeObject:mediaItem];
-//}
 
 - (void)addMediaItem:(Media *)mediaItem
 {
     [self.privateMediaItems addObject:mediaItem];
 }
 
-//- (NSArray *)mediaItems
-//{
-//    return self.privateMediaItems;
-//}
-
-
 - (NSArray *)mediaItems
 {
-    return _mediaItems;
+    return self.privateMediaItems;
 }
+
+
+//- (NSArray *)mediaItems
+//{
+//    return _mediaItems;
+//}
 
 - (void)setMediaItems:(NSArray *)mediaItems
 {
