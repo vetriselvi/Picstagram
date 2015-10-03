@@ -225,7 +225,7 @@ static NSParagraphStyle *paragraphStyle;
                                                                      toItem:_mediaImageView
                                                                   attribute:NSLayoutAttributeWidth
                                                                  multiplier:1
-                                                                   constant:0];
+                                                                   constant:100];
         self.imageHeightConstraint.identifier = @"Image height constraint";
         
         
