@@ -83,8 +83,14 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [self.tableView beginUpdates];
+        
         Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+        [self.imageArray removeObjectAtIndex:indexPath.row];
+
         [[DataSource sharedInstance] deleteMediaItem:item];
+        [self.tableView reloadData];
+        [self.tableView endUpdates];
     }
 }
 //- (NSArray *)mediaItems
